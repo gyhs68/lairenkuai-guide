@@ -3,18 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    
-    <!-- 🌟 微信分享卡片优化 🌟 -->
     <title>来人快平台使用教程</title>
-    <meta name="description" content="点击查看详细使用教程，一键下载APP！">
-    
-    <!-- ⚠️请确保下面链接是你的真实 GitHub 地址⚠️ -->
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="来人快 - 全品类任务对接平台">
-    <meta property="og:description" content="学生、宝妈、闲人有空可接单；各种奇葩任务均可发布，快来体验吧！">
-    <meta property="og:image" content="https://gyhs68.github.io/lairenkuai-guide/images/logo.png">
-    <meta property="og:url" content="https://gyhs68.github.io/lairenkuai-guide/">
-
     <style>
         :root {
             --primary-color: #3b82f6;
@@ -30,31 +19,19 @@
             color: var(--text-main);
             margin: 0;
             padding: 0 0 30px 0;
-            line-height: 1.6;
-        }
-
-        /* 🌟 微信防拦截提示条 🌟 */
-        .wechat-tip {
-            background-color: #fff3cd;
-            color: #856404;
-            text-align: center;
-            padding: 10px;
-            font-size: 13px;
-            font-weight: bold;
-            line-height: 1.4;
-            display: none; /* 默认隐藏，在微信里会自动显示 */
+            line-height: 1.5;
         }
 
         .container {
             max-width: 800px;
             margin: 0 auto;
-            padding: 15px 15px;
+            padding: 15px 10px;
         }
 
         /* 头部标题 */
         .header { text-align: center; margin-bottom: 20px; }
-        .header h1 { font-size: 22px; margin: 0 0 8px 0; color: #1a1a1a; }
-        .header p { font-size: 13px; color: var(--text-sub); word-break: break-all; }
+        .header h1 { font-size: 20px; margin: 0 0 8px 0; color: #1a1a1a; }
+        .header p { font-size: 12px; color: var(--text-sub); word-break: break-all; }
 
         /* 操作按钮区 */
         .action-area {
@@ -62,15 +39,15 @@
             border-radius: 12px;
             padding: 15px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            margin-bottom: 25px;
+            margin-bottom: 20px;
             display: flex;
             gap: 10px;
         }
 
         .btn {
             flex: 1;
-            padding: 14px 10px;
-            font-size: 15px;
+            padding: 12px 10px;
+            font-size: 14px;
             font-weight: bold;
             border-radius: 8px;
             text-align: center;
@@ -90,78 +67,69 @@
         .btn-secondary { background-color: white; color: var(--primary-color); border: 1px solid var(--primary-color); }
         .btn-secondary:active { background-color: #f0f7ff; }
 
-        /* 🌟 响应式网格布局 🌟 */
+        /* 双列网格布局 */
         .grid-container {
             display: grid;
-            grid-template-columns: repeat(1, 1fr); /* 手机端默认单列，图片最大最清晰 */
-            gap: 20px;
-        }
-
-        /* 电脑端自动变成双列 */
-        @media (min-width: 600px) {
-            .grid-container {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 15px;
-            }
+            grid-template-columns: repeat(2, 1fr); 
+            gap: 10px;
         }
 
         /* 步骤卡片 */
         .step-card {
             background: var(--card-bg);
-            border-radius: 12px;
-            padding: 18px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+            border-radius: 10px;
+            padding: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
             display: flex;
             flex-direction: column;
         }
         
         .step-title {
-            font-size: 16px;
+            font-size: 14px;
             font-weight: bold;
             color: #111;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
             display: flex;
             align-items: center;
         }
         .step-num {
             background: var(--primary-color);
             color: white;
-            width: 24px;
-            height: 24px;
+            width: 20px;
+            height: 20px;
             border-radius: 50%;
             display: inline-flex;
             justify-content: center;
             align-items: center;
-            font-size: 13px;
-            margin-right: 8px;
+            font-size: 12px;
+            margin-right: 6px;
             flex-shrink: 0;
         }
         
         .step-content {
-            font-size: 14px;
+            font-size: 12px;
             color: var(--text-sub);
-            margin-bottom: 15px;
+            margin-bottom: 10px;
             flex-grow: 1;
         }
         .step-content p { margin: 4px 0; }
         .highlight { color: #e11d48; font-weight: bold; }
         
         .tips { 
-            background: #fdf2f8; color: #9d174d; padding: 8px 12px; border-radius: 6px; font-size: 13px; margin-top: 8px;
+            background: #fdf2f8; color: #9d174d; padding: 4px 6px; border-radius: 4px; font-size: 11px; margin-top: 6px;
         }
 
-        /* 🌟 图片完全展示，不裁剪 🌟 */
+        /* 图片完全展示 */
         .step-img {
             width: 100%;
             height: auto; 
-            border-radius: 8px;
+            border-radius: 6px;
             border: 1px solid #f0f0f0;
             display: block;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
         }
 
         .footer-note {
-            text-align: center; font-size: 13px; color: #888; margin-top: 25px; padding: 15px; background: #fff; border-radius: 12px;
+            text-align: center; font-size: 12px; color: #888; margin-top: 20px; padding: 12px; background: #fff; border-radius: 10px;
         }
 
         /* --- 弹窗公共样式 --- */
@@ -211,11 +179,6 @@
 </head>
 <body>
 
-<!-- 微信防拦截提示（只在微信中显示） -->
-<div class="wechat-tip" id="wechatTip">
-    提示：如需下载 APP，请点击右上角“···”，选择“在浏览器中打开”
-</div>
-
 <div class="container">
     
     <div class="header">
@@ -223,19 +186,17 @@
         <p>https://backend-production-f2d60.up.railway.app/</p>
     </div>
 
-    <!-- 操作按钮区 -->
     <div class="action-area">
         <button class="btn btn-primary" onclick="copyUrl()">📋 复制网址去注册</button>
         <button class="btn btn-secondary" onclick="openDownloadModal()">📱 下载 APP 客户端</button>
     </div>
 
-    <!-- 步骤列表区 -->
     <div class="grid-container">
         
         <div class="step-card">
             <div class="step-title"><span class="step-num">1</span> 注册与登录</div>
             <div class="step-content">
-                <p>浏览器打开网页，点击【去注册】填写手机号、密码。</p>
+                <p>浏览器打开网页，点击【去注册】。</p>
                 <p>邀请码：<span class="highlight">TEABJN6</span></p>
             </div>
             <img src="./images/1.png" alt="注册登录" class="step-img">
@@ -305,15 +266,6 @@
 </div>
 
 <script>
-    // 自动检测是否在微信中打开，如果是则显示顶部提示
-    function isWechat() {
-        var ua = navigator.userAgent.toLowerCase();
-        return ua.indexOf('micromessenger') !== -1;
-    }
-    if (isWechat()) {
-        document.getElementById('wechatTip').style.display = 'block';
-    }
-
     // 复制网址功能
     function copyUrl() {
         const url = "https://backend-production-f2d60.up.railway.app/";
@@ -330,7 +282,7 @@
         });
     }
 
-    // 弹窗控制
+    // 弹窗逻辑
     const downloadModal = document.getElementById('downloadModal');
 
     function openDownloadModal() {
@@ -342,18 +294,32 @@
         downloadModal.style.display = 'none';
     }
 
-    // 真实下载逻辑
+    // 🌟 修改好的真实下载逻辑 🌟
     function triggerDownload(event) {
         event.preventDefault(); 
         
-        // 替换为你真实的 APK 下载链接
+        // 这里已经替换为你提供的真实下载链接
         const apkUrl = 'https://backend-production-f2d60.up.railway.app/public/download/lairenkuai-v1.5.21.apk'; 
         
-        // 关闭弹窗
+        // 1. 先把弹窗关掉，让用户看到下载进度（可选，体验更好）
         downloadModal.style.display = 'none';
 
-        // 触发下载
+        // 2. 触发下载
+        // 直接跳转链接是最通用的安卓下载方式，浏览器会自动接管下载
         window.location.href = apkUrl; 
+        
+        /* 
+        如果你发现直接跳转在某些浏览器（比如微信）里被拦截，
+        可以尝试使用下面这种新建 a 标签的方式（取消注释使用）：
+        
+        const link = document.createElement('a');
+        link.href = apkUrl;
+        link.download = '来人快-v1.5.21.apk'; 
+        link.style.display = 'none';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        */
     }
 </script>
 
